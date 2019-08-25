@@ -34,7 +34,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imageTaker.allowsEditing = true
         
     }
-    
+    //Mark: - Picker Controller Delegate methods and Model Integration
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let userImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
