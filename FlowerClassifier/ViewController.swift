@@ -54,6 +54,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
     
+    //function to Detect the Flower pictured
+    
+    
     func detectFlower(flowerImage image: CIImage){
         
         //load model
@@ -64,7 +67,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         //create a request to the model
         let request = VNCoreMLRequest(model: model) {(request, error) in
             guard let results =  request.results as? [VNClassificationObservation] else { // classification analysis processed by the request
-                fatalError("Processing model failed ")
+                fatalError("Processing Flower failed ")
             }
             
             if let mostProbableFlower = results.first {
@@ -97,13 +100,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
     
-    
+    //function to get the camera when button is pressed
     @IBAction func cameraButtonPressed(_ sender: UIBarButtonItem) {
         present(imageTaker, animated: true, completion: nil)
     }
     
     //MARK: - Networking
     
+    //Function to link the url and make an HTTP request
     func getFlowerInfo(url: String, parameters: [String:String]){
         
         //HTTP Request
@@ -113,6 +117,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 
                 print("Request Successful")
                 let flowerInfoJSON : JSON = JSON(response.result.value!)
+                print(flowerInfoJSON)
                 self.parseJSONfile(JSONinfo: flowerInfoJSON)
             } else {
                 print ("Error \(String(describing: response.result.error))")
@@ -122,10 +127,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
     
+    //Function to parse result from JSON output
     func parseJSONfile(JSONinfo: JSON){
         //parsing the JSON file
-        if let pageID = JSONinfo["query"]["pageids"][0].int {
-            flowerInfoField.text = JSONinfo["query"]["pages"][String(pageID)]["extract"].stringValue
+        if let pageID = JSONinfo["query"]["pageids"][0].string{
+            flowerInfoField.text = JSONinfo["query"]["pages"][pageID]["extract"].stringValue
+            flowerInfoField.adjustsFontSizeToFitWidth = true
         }else {
             flowerInfoField.text="Flower information Unavailable"
             print("Page ID is nil")

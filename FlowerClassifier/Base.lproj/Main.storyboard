@@ -18,35 +18,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5j5-ee-YFq">
-                                <rect key="frame" x="-20" y="44" width="415" height="384"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6wX-MM-5Xb">
-                                        <rect key="frame" x="20" y="20" width="375" height="344"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="6wX-MM-5Xb" secondAttribute="height" multiplier="375:344" id="YK2-Ih-Ppp"/>
-                                            <constraint firstAttribute="height" constant="344" id="rMM-up-vsv"/>
-                                            <constraint firstAttribute="width" constant="375" id="zvV-Z2-EXK"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1W0-wA-KKw">
+                                <rect key="frame" x="0.0" y="64" width="375" height="375"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="6wX-MM-5Xb" secondAttribute="trailing" constant="20" id="6CU-ox-W8d"/>
-                                    <constraint firstItem="6wX-MM-5Xb" firstAttribute="leading" secondItem="5j5-ee-YFq" secondAttribute="leading" constant="20" id="Gq2-KM-R7J"/>
-                                    <constraint firstItem="6wX-MM-5Xb" firstAttribute="top" secondItem="5j5-ee-YFq" secondAttribute="top" constant="20" id="fUe-ps-ilQ"/>
-                                    <constraint firstAttribute="bottom" secondItem="6wX-MM-5Xb" secondAttribute="bottom" constant="20" id="jzM-fx-ssu"/>
+                                    <constraint firstAttribute="width" secondItem="1W0-wA-KKw" secondAttribute="height" multiplier="1:1" id="M3x-u6-c3g"/>
                                 </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibk-qD-cqM">
-                                <rect key="frame" x="21" y="464" width="328" height="162"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="fOX-8l-iCg">
+                                <rect key="frame" x="0.0" y="456" width="375" height="191"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fOX-8l-iCg" secondAttribute="height" multiplier="375:191" id="goB-Ba-SlI"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.82255175159235672" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fOX-8l-iCg" firstAttribute="top" secondItem="1W0-wA-KKw" secondAttribute="bottom" constant="17" id="8bF-Yq-mqY"/>
+                            <constraint firstItem="fOX-8l-iCg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Inu-Y5-XOj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fOX-8l-iCg" secondAttribute="bottom" constant="20" id="QBq-JC-tRP"/>
+                            <constraint firstItem="fOX-8l-iCg" firstAttribute="top" secondItem="1W0-wA-KKw" secondAttribute="bottom" constant="17" id="QOd-kQ-abI"/>
+                            <constraint firstItem="1W0-wA-KKw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="VYp-MG-PSo"/>
+                            <constraint firstItem="fOX-8l-iCg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VlM-fo-rdd"/>
+                            <constraint firstItem="1W0-wA-KKw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="d5P-KU-5K3"/>
+                            <constraint firstItem="1W0-wA-KKw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xHV-bU-mm3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="u69-39-Nzx">
@@ -57,8 +55,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="flowerInfoField" destination="ibk-qD-cqM" id="iy9-Q2-fzs"/>
-                        <outlet property="imageDisplayed" destination="6wX-MM-5Xb" id="Bxu-h2-h38"/>
+                        <outlet property="flowerInfoField" destination="fOX-8l-iCg" id="w8M-23-Xvy"/>
+                        <outlet property="imageDisplayed" destination="1W0-wA-KKw" id="kUA-OF-WuS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
